@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ingredient_array = %w[lemon ice mint vodka rum gin]
+n = 0
+
+5.times do
+  Ingredient.create(
+    name: ingredient_array[n]
+    )
+  n += 1
+end
