@@ -1,0 +1,23 @@
+<h1>Cocktail#show</h1>
+
+  <h1><%= @cocktail.name %></h1>
+
+  <!-- ABLE TO ADD A DOSE ON THIS PAGE -->
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <% @ingredients = Ingredient.all %>
+  <!-- INGREDIENTS IS A COLLECTION HERE -->
+  <%= f.input :ingredient_id, collection: @ingredients  %>
+  <!-- DO I NEED TO PASS IN THE INGREDIENTS ARRAY WITH A  -->
+  <%= f.submit %>
+  <% end %>
+
+  <!-- DISPLAYS ALL DOSES ADDED SO FAR -->
+  <% @cocktail.doses.each do |dose| %>
+    <p><%= dose.description %> <%= dose.ingredient.name %></p>
+    <%= link_to "Delete dose?", dose_path(dose), method: :delete  %>
+  <% end %>
+
+
+  <h2> <%= link_to "Go back to cocktails", cocktails_path %></h2>
+

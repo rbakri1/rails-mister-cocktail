@@ -1,0 +1,12 @@
+<h1>Doses#new</h1>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+
+  <%= f.input :description %>
+  <% @ingredients = Ingredient.all %>
+  <!-- INGREDIENTS IS A COLLECTION HERE -->
+  <%= f.input :ingredient_id, collection: @ingredients  %>
+  <!-- DO I NEED TO PASS IN THE INGREDIENTS ARRAY WITH A  -->
+
+  <%= f.submit %>
+<% end %>

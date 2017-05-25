@@ -6,6 +6,8 @@ class CocktailsController < ApplicationController
 
 	def show
 		@cocktail = Cocktail.find(params[:id])
+		@dose = Dose.new
+		# CREATE A NEW DOSE INSTANCE IN ORDER TO FEED IT THROUGH TO THE SHOW VIEW SO A DOSE CAN BE ADDED ON THAT PAGE
 	end
 
 	def new
