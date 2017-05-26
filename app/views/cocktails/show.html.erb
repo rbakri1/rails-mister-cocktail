@@ -1,6 +1,9 @@
 <h1>Cocktail#show</h1>
 
+
+  <%= image_tag @cocktail.photo.url(:large) %>
   <h1><%= @cocktail.name %></h1>
+
 
   <!-- ABLE TO ADD A DOSE ON THIS PAGE -->
   <%= simple_form_for [@cocktail, @dose] do |f| %>
